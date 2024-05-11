@@ -1,0 +1,27 @@
+/* Card.module.css */
+.card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 16px;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+.image {
+    width: 33.3333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    width: 66.6666%;
+}
+
+.button {
+    width: 128px;
+}
