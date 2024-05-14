@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card, CardTitle, Layout, StatusBarBackground, ProjectHeader } from '@careevolution/mydatahelps-ui'
+import { Card, SingleSurveyTask, CardTitle, Layout, StatusBarBackground, ProjectHeader } from '@careevolution/mydatahelps-ui'
 import Greetings from '../components/Greetings'
 import WeekCard from '../components/WeekCard'
 import MyDataHelps from '@careevolution/mydatahelps-js'
+import SurveyShortStats from '../components/SurveyShortStats'
 
 const interventions = [
     {week:1, tasks:[
@@ -57,7 +58,7 @@ class Homework extends React.Component {
 
         // Create the set of strings that will change based on the dates.
         this.state = {
-            showExercises: false,
+            cohort: 'control'
         }
 
    }
@@ -65,9 +66,7 @@ class Homework extends React.Component {
     componentDidMount() {
         MyDataHelps.getParticipantInfo().then((result) => {
             const cohort = result['customFields']['cohort']
-            if(cohort === 'mindful' || cohort === 'writing') {
-                this.setState({showExercises: true})
-            }
+            this.setState({cohort: cohort})
         })
     }
 
@@ -75,7 +74,7 @@ class Homework extends React.Component {
 
         /* If we don't have to show any of the mindfulness interventions,
          * we just return early.*/
-        if(!this.state.showExercises) {
+        if(this.state.cohort === 'control') {
             return (
              <Layout colorScheme='auto'>
                 <StatusBarBackground />
@@ -87,6 +86,38 @@ class Homework extends React.Component {
                         }}>
                         <Greetings />
                       <p>Looks like there is nothing currently assigned here.</p>
+                    </div>
+                </Card>
+            </Layout>
+            )
+        }
+
+        if(this.state.cohort === 'writing') {
+            return (
+              <Layout colorScheme='auto'>
+                <StatusBarBackground />
+                <ProjectHeader />
+                <Card>
+                    <div
+                        style={{
+                            margin: '16px'
+                        }}>
+                        <Greetings />
+                      <p>Select the expresive writing session below to complete.</p>
+                    </div>
+                </Card>
+                <Card>
+                    <SingleSurveyTask
+                        onClick={() => MyDataHelps.startSurvey('YMAP - Expressive Writing Survey')}
+                        task={{
+                            status: 'incomplete',
+                            surveyDescription: 'Please write about something important to you that was stressful, challenging, or positive.',
+                            surveyDisplayName: 'Expressive Writing Survey'
+                    }}/>
+                    <div style={{
+                        margin: '0 0 16px 16px'
+                    }}>
+                        <SurveyShortStats surveyName={'YMAP - Expressive Writing Survey'}/>
                     </div>
                 </Card>
             </Layout>
