@@ -19,7 +19,7 @@ const interventions = [
     ]},
     {week:3, tasks:[
         {title:'Compassionate Body Scan', description:'Check in to see what’s going on in your body with the “three C’s”: curiosity, care, and compassion', survey:'YMAP - Compassionate Body Scan', duration:7},
-        {title:'Relax, Ground, and Clear', description:'Use your imagination to relax and feel more stable and grounded', survey:'YMAP - Relaxation', duration:7},
+        {title:'Relax, Ground, and Clear', description:'Use your imagination to relax and feel more stable and grounded', survey:'YMAP - Relax Ground and Clear', duration:7},
         {title:'Being Kind to Your Body', description:'Connect to your entire body with warmth and kindness', survey:'YMAP - Being Kind to Your Body', duration:5},
         {title:'Body Scan 2', description:'Become aware of your entire body--approach the experience with a sense of curiosity and openness', survey:'YMAP - Body Scan 2', duration:10},
         {title:'Inviting Relaxation 2', description:'Bring kind awareness to those parts of the body that hold stress', survey:'YMAP - Inviting Relaxation 2', duration:5}
