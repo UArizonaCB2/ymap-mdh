@@ -17,7 +17,7 @@ function renderIt(task) {
           task={{
             status: 'incomplete',
             surveyDescription: task.description,
-            surveyDisplayName: task.title
+            surveyDisplayName: task.title+' ('+task.duration+' mins)'
       }}/>
       <div style={{
           margin: '0 0 16px 16px'
