@@ -14,7 +14,6 @@ const interventions = [
     {week:2, tasks:[
         {title:'Gratitude', description:'Boost resilient and positive feelings by focusing on gratitude', survey:'YMAP - Gratitude', duration:10},
         {title:'Growing Stronger through Gratitude', description:'Explore reasons to feel grateful', survey:'YMAP - Growing Stronger through Gratitude', duration:7},
-        {title:'Gratitude in Difficult Times', description:'Hold on to gratitude, even in difficult situations', survey:'YMAP - Gratitude in Difficult Times', duration:6},
         {title:'Mini-Gratitude', description:'Boost positive feelings through gratitude', survey:'YMAP - Mini-Gratitude', duration:3}
     ]},
     {week:3, tasks:[
